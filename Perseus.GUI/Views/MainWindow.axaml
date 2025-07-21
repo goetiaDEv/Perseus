@@ -1,0 +1,139 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:Perseus.GUI.ViewModels"
+        xmlns:views="using:Perseus.GUI.Views"
+        xmlns:sys="clr-namespace:System;assembly=System.Runtime"
+        x:Class="Perseus.GUI.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Icon="/Assets/perseus-icon.ico"
+        Title="Perseus Security Scanner"
+        Width="1200"
+        Height="800"
+        MinWidth="800"
+        MinHeight="600">
+
+  <Design.DataContext>
+    <vm:MainWindowViewModel />
+  </Design.DataContext>
+
+  <Grid RowDefinitions="Auto,*,Auto">
+    
+    <!-- Header -->
+    <Border Grid.Row="0" Background="#2D3748" Padding="16,12">
+      <Grid ColumnDefinitions="Auto,*,Auto">
+        <StackPanel Grid.Column="0" Orientation="Horizontal" Spacing="12">
+          <TextBlock Text="🛡️" FontSize="24" VerticalAlignment="Center"/>
+          <StackPanel VerticalAlignment="Center">
+            <TextBlock Text="Perseus Security Scanner" 
+                       FontSize="18" 
+                       FontWeight="Bold" 
+                       Foreground="White"/>
+            <TextBlock Text="Red Team &amp; Blue Team Cybersecurity Tool" 
+                       FontSize="12" 
+                       Foreground="#A0AEC0"/>
+          </StackPanel>
+        </StackPanel>
+        
+        <StackPanel Grid.Column="2" Orientation="Horizontal" Spacing="8">
+          <Button Content="Sair" 
+                  Command="{Binding ExitCommand}"
+                  Background="#E53E3E"
+                  Foreground="White"
+                  Padding="12,6"/>
+        </StackPanel>
+      </Grid>
+    </Border>
+
+    <!-- Main Content -->
+    <Grid Grid.Row="1" ColumnDefinitions="250,*">
+      
+      <!-- Navigation Sidebar -->
+      <Border Grid.Column="0" Background="#F7FAFC" BorderBrush="#E2E8F0" BorderThickness="0,0,1,0">
+        <StackPanel Margin="16">
+          <TextBlock Text="Navegação" 
+                     FontSize="14" 
+                     FontWeight="Bold" 
+                     Foreground="#4A5568" 
+                     Margin="0,0,0,12"/>
+          
+          <ItemsControl ItemsSource="{Binding NavigationItems}">
+            <ItemsControl.ItemTemplate>
+              <DataTemplate>
+                <Button Margin="0,2" 
+                        Padding="12,8" 
+                        HorizontalAlignment="Stretch"
+                        HorizontalContentAlignment="Left"
+                        Background="Transparent"
+                        BorderThickness="0"
+                        Command="{Binding $parent[ItemsControl].DataContext.NavigateCommand}"
+                        CommandParameter="{Binding Name}">
+                  <StackPanel Orientation="Horizontal" Spacing="8">
+                    <TextBlock Text="{Binding Icon}" FontSize="16"/>
+                    <StackPanel>
+                      <TextBlock Text="{Binding Name}" FontWeight="SemiBold"/>
+                      <TextBlock Text="{Binding Description}" 
+                                 FontSize="11" 
+                                 Foreground="#718096"
+                                 TextWrapping="Wrap"/>
+                    </StackPanel>
+                  </StackPanel>
+                </Button>
+              </DataTemplate>
+            </ItemsControl.ItemTemplate>
+          </ItemsControl>
+          
+          <!-- Operation Status -->
+          <Border Background="#EDF2F7" 
+                  CornerRadius="6" 
+                  Padding="12" 
+                  Margin="0,24,0,0">
+            <StackPanel Spacing="8">
+              <TextBlock Text="Status da Operação" 
+                         FontSize="12" 
+                         FontWeight="Bold" 
+                         Foreground="#4A5568"/>
+              <TextBlock Text="{Binding StatusMessage}" 
+                         FontSize="11" 
+                         Foreground="#2D3748"
+                         TextWrapping="Wrap"/>
+              <ProgressBar IsIndeterminate="{Binding IsOperationRunning}" 
+                           Height="4"
+                           IsVisible="{Binding IsOperationRunning}"/>
+            </StackPanel>
+          </Border>
+        </StackPanel>
+      </Border>
+
+      <!-- Content Area -->
+      <ContentControl Grid.Column="1" Content="{Binding CurrentView}">
+        <ContentControl.DataTemplates>
+          <DataTemplate DataType="vm:AttackViewModel">
+            <views:AttackView />
+          </DataTemplate>
+          <DataTemplate DataType="vm:DefenseViewModel">
+            <views:DefenseView />
+          </DataTemplate>
+          <DataTemplate DataType="vm:SettingsViewModel">
+            <views:SettingsView />
+          </DataTemplate>
+        </ContentControl.DataTemplates>
+      </ContentControl>
+    </Grid>
+
+    <!-- Status Bar -->
+    <Border Grid.Row="2" Background="#EDF2F7" BorderBrush="#E2E8F0" BorderThickness="0,1,0,0" Padding="16,8">
+      <Grid ColumnDefinitions="*,Auto">
+        <TextBlock Grid.Column="0" 
+                   Text="{Binding StatusMessage}" 
+                   VerticalAlignment="Center"
+                   Foreground="#4A5568"/>
+        <TextBlock Grid.Column="1" 
+                   Text="{Binding Source={x:Static sys:DateTime.Now}, StringFormat='HH:mm:ss'}" 
+                   VerticalAlignment="Center"
+                   Foreground="#718096"
+                   FontSize="12"/>
+      </Grid>
+    </Border>
+  </Grid>
+</Window>
+

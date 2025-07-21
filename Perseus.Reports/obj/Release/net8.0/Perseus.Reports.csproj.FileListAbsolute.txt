@@ -1,0 +1,15 @@
+/home/ubuntu/perseus/Perseus.Reports/bin/Release/net8.0/Perseus.Reports.deps.json
+/home/ubuntu/perseus/Perseus.Reports/bin/Release/net8.0/Perseus.Reports.dll
+/home/ubuntu/perseus/Perseus.Reports/bin/Release/net8.0/Perseus.Reports.pdb
+/home/ubuntu/perseus/Perseus.Reports/bin/Release/net8.0/Perseus.Common.dll
+/home/ubuntu/perseus/Perseus.Reports/bin/Release/net8.0/Perseus.Common.pdb
+/home/ubuntu/perseus/Perseus.Reports/obj/Release/net8.0/Perseus.Reports.csproj.AssemblyReference.cache
+/home/ubuntu/perseus/Perseus.Reports/obj/Release/net8.0/Perseus.Reports.GeneratedMSBuildEditorConfig.editorconfig
+/home/ubuntu/perseus/Perseus.Reports/obj/Release/net8.0/Perseus.Reports.AssemblyInfoInputs.cache
+/home/ubuntu/perseus/Perseus.Reports/obj/Release/net8.0/Perseus.Reports.AssemblyInfo.cs
+/home/ubuntu/perseus/Perseus.Reports/obj/Release/net8.0/Perseus.Reports.csproj.CoreCompileInputs.cache
+/home/ubuntu/perseus/Perseus.Reports/obj/Release/net8.0/Perseus..1EA961DE.Up2Date
+/home/ubuntu/perseus/Perseus.Reports/obj/Release/net8.0/Perseus.Reports.dll
+/home/ubuntu/perseus/Perseus.Reports/obj/Release/net8.0/refint/Perseus.Reports.dll
+/home/ubuntu/perseus/Perseus.Reports/obj/Release/net8.0/Perseus.Reports.pdb
+/home/ubuntu/perseus/Perseus.Reports/obj/Release/net8.0/ref/Perseus.Reports.dll

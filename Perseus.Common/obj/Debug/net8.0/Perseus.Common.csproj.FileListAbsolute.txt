@@ -1,0 +1,12 @@
+/home/ubuntu/perseus/Perseus.Common/bin/Debug/net8.0/Perseus.Common.deps.json
+/home/ubuntu/perseus/Perseus.Common/bin/Debug/net8.0/Perseus.Common.dll
+/home/ubuntu/perseus/Perseus.Common/bin/Debug/net8.0/Perseus.Common.pdb
+/home/ubuntu/perseus/Perseus.Common/obj/Debug/net8.0/Perseus.Common.csproj.AssemblyReference.cache
+/home/ubuntu/perseus/Perseus.Common/obj/Debug/net8.0/Perseus.Common.GeneratedMSBuildEditorConfig.editorconfig
+/home/ubuntu/perseus/Perseus.Common/obj/Debug/net8.0/Perseus.Common.AssemblyInfoInputs.cache
+/home/ubuntu/perseus/Perseus.Common/obj/Debug/net8.0/Perseus.Common.AssemblyInfo.cs
+/home/ubuntu/perseus/Perseus.Common/obj/Debug/net8.0/Perseus.Common.csproj.CoreCompileInputs.cache
+/home/ubuntu/perseus/Perseus.Common/obj/Debug/net8.0/Perseus.Common.dll
+/home/ubuntu/perseus/Perseus.Common/obj/Debug/net8.0/refint/Perseus.Common.dll
+/home/ubuntu/perseus/Perseus.Common/obj/Debug/net8.0/Perseus.Common.pdb
+/home/ubuntu/perseus/Perseus.Common/obj/Debug/net8.0/ref/Perseus.Common.dll

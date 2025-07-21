@@ -1,0 +1,15 @@
+/home/ubuntu/perseus/Perseus.Core/bin/Debug/net8.0/Perseus.Core.deps.json
+/home/ubuntu/perseus/Perseus.Core/bin/Debug/net8.0/Perseus.Core.dll
+/home/ubuntu/perseus/Perseus.Core/bin/Debug/net8.0/Perseus.Core.pdb
+/home/ubuntu/perseus/Perseus.Core/bin/Debug/net8.0/Perseus.Common.dll
+/home/ubuntu/perseus/Perseus.Core/bin/Debug/net8.0/Perseus.Common.pdb
+/home/ubuntu/perseus/Perseus.Core/obj/Debug/net8.0/Perseus.Core.csproj.AssemblyReference.cache
+/home/ubuntu/perseus/Perseus.Core/obj/Debug/net8.0/Perseus.Core.GeneratedMSBuildEditorConfig.editorconfig
+/home/ubuntu/perseus/Perseus.Core/obj/Debug/net8.0/Perseus.Core.AssemblyInfoInputs.cache
+/home/ubuntu/perseus/Perseus.Core/obj/Debug/net8.0/Perseus.Core.AssemblyInfo.cs
+/home/ubuntu/perseus/Perseus.Core/obj/Debug/net8.0/Perseus.Core.csproj.CoreCompileInputs.cache
+/home/ubuntu/perseus/Perseus.Core/obj/Debug/net8.0/Perseus..F9E5BB51.Up2Date
+/home/ubuntu/perseus/Perseus.Core/obj/Debug/net8.0/Perseus.Core.dll
+/home/ubuntu/perseus/Perseus.Core/obj/Debug/net8.0/refint/Perseus.Core.dll
+/home/ubuntu/perseus/Perseus.Core/obj/Debug/net8.0/Perseus.Core.pdb
+/home/ubuntu/perseus/Perseus.Core/obj/Debug/net8.0/ref/Perseus.Core.dll
