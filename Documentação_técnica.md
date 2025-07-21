@@ -15,7 +15,7 @@
 
 ## Introdução e Arquitetura
 
-O Perseus representa uma evolução significativa no desenvolvimento de ferramentas de cybersecurity, combinando as melhores práticas do projeto Helius com a filosofia agressiva e orientada a resultados do SKEF (Speed Kill Execution Framework). Esta documentação técnica fornece uma visão aprofundada da arquitetura, implementação e funcionalidades da ferramenta.
+O Perseus representa uma evolução significativa no desenvolvimento de ferramentas de cybersecurity, combinando as melhores práticas do projeto Helius e inspirado na filosofia agressiva e orientada a resultados de outros projetos. Esta documentação técnica fornece uma visão aprofundada da arquitetura, implementação e funcionalidades da ferramenta.
 
 ### Filosofia de Design
 
@@ -295,8 +295,8 @@ Para análise de vulnerabilidades, considere pre-popular o cache de CVE executan
 
 ---
 
-**Autor:** Manus AI  
+**Autor:** goetiaDEv  
 **Versão:** 1.0.0  
 **Data:** 2025  
-**Baseado em:** Projeto Helius e filosofia SKEF
+**Baseado em:** Projeto Helius
 
