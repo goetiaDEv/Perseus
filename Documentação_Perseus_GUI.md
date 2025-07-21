@@ -266,5 +266,5 @@ A GUI democratiza o acesso às funcionalidades avançadas do Perseus, permitindo
 
 ---
 
-*Documentação gerada por Manus AI - Perseus Security Scanner v1.0.0*
+*Documentação gerada por goetiaDEv - Perseus Security Scanner v1.0.0*
 
