@@ -161,7 +161,7 @@ Este projeto foi desenvolvido com base no trabalho anterior do projeto Helius e 
 
 ---
 
-**Desenvolvido por:** Manus AI  
+**Desenvolvido por:** goetiaDEv  
 **Data de Release:** 20 de Julho de 2025  
 **Versão:** 1.0.0
 
