@@ -9,7 +9,7 @@
 ```
 # Perseus - Ferramenta de Cybersecurity para Red Team e Blue Team
 
-Perseus é uma ferramenta de cybersecurity multifuncional desenvolvida em C# que atende às necessidades tanto de equipes de Red Team quanto de Blue Team. Baseado na evolução do projeto Helius e inspirado na filosofia do SKEF (Speed Kill Execution Framework), o Perseus oferece uma abordagem unificada para operações ofensivas e defensivas de segurança cibernética.
+Perseus é uma ferramenta de cybersecurity multifuncional desenvolvida em C# que atende às necessidades tanto de equipes de Red Team quanto de Blue Team. Baseado na evolução do projeto Helius, o Perseus oferece uma abordagem unificada para operações ofensivas e defensivas de segurança cibernética.
 
 ## 🎯 Visão Geral
 
@@ -315,8 +315,8 @@ Para suporte e questões:
 
 ---
 
-**Desenvolvido por:** Manus AI  
-**Baseado em:** Projeto Helius e filosofia SKEF  
+**Desenvolvido por:** goetiaDEv  
+**Baseado em:** Projeto Helius 
 **Versão:** 1.0.0  
 **Data:** 2025
 
