@@ -1,0 +1,16 @@
+/home/ubuntu/Perseus-master/Perseus.Reports/bin/Debug/net8.0/Perseus.Reports.deps.json
+/home/ubuntu/Perseus-master/Perseus.Reports/bin/Debug/net8.0/Perseus.Reports.dll
+/home/ubuntu/Perseus-master/Perseus.Reports/bin/Debug/net8.0/Perseus.Reports.pdb
+/home/ubuntu/Perseus-master/Perseus.Reports/bin/Debug/net8.0/Perseus.Common.dll
+/home/ubuntu/Perseus-master/Perseus.Reports/bin/Debug/net8.0/Perseus.Common.pdb
+/home/ubuntu/Perseus-master/Perseus.Reports/obj/Debug/net8.0/Perseus.Reports.csproj.AssemblyReference.cache
+/home/ubuntu/Perseus-master/Perseus.Reports/obj/Debug/net8.0/Perseus.Reports.GeneratedMSBuildEditorConfig.editorconfig
+/home/ubuntu/Perseus-master/Perseus.Reports/obj/Debug/net8.0/Perseus.Reports.AssemblyInfoInputs.cache
+/home/ubuntu/Perseus-master/Perseus.Reports/obj/Debug/net8.0/Perseus.Reports.AssemblyInfo.cs
+/home/ubuntu/Perseus-master/Perseus.Reports/obj/Debug/net8.0/Perseus.Reports.csproj.CoreCompileInputs.cache
+/home/ubuntu/Perseus-master/Perseus.Reports/obj/Debug/net8.0/Perseus.Reports.sourcelink.json
+/home/ubuntu/Perseus-master/Perseus.Reports/obj/Debug/net8.0/Perseus.Reports.csproj.CopyComplete
+/home/ubuntu/Perseus-master/Perseus.Reports/obj/Debug/net8.0/Perseus.Reports.dll
+/home/ubuntu/Perseus-master/Perseus.Reports/obj/Debug/net8.0/refint/Perseus.Reports.dll
+/home/ubuntu/Perseus-master/Perseus.Reports/obj/Debug/net8.0/Perseus.Reports.pdb
+/home/ubuntu/Perseus-master/Perseus.Reports/obj/Debug/net8.0/ref/Perseus.Reports.dll

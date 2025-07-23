@@ -1,0 +1,310 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/ubuntu/Perseus-master/Perseus.GUI/Perseus.GUI.csproj": {}
+  },
+  "projects": {
+    "/home/ubuntu/Perseus-master/Perseus.Common/Perseus.Common.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/ubuntu/Perseus-master/Perseus.Common/Perseus.Common.csproj",
+        "projectName": "Perseus.Common",
+        "projectPath": "/home/ubuntu/Perseus-master/Perseus.Common/Perseus.Common.csproj",
+        "packagesPath": "/home/ubuntu/.nuget/packages/",
+        "outputPath": "/home/ubuntu/Perseus-master/Perseus.Common/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/ubuntu/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
+            "System.Text.Json": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.117/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/ubuntu/Perseus-master/Perseus.Core/Perseus.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/ubuntu/Perseus-master/Perseus.Core/Perseus.Core.csproj",
+        "projectName": "Perseus.Core",
+        "projectPath": "/home/ubuntu/Perseus-master/Perseus.Core/Perseus.Core.csproj",
+        "packagesPath": "/home/ubuntu/.nuget/packages/",
+        "outputPath": "/home/ubuntu/Perseus-master/Perseus.Core/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/ubuntu/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/home/ubuntu/Perseus-master/Perseus.Common/Perseus.Common.csproj": {
+                "projectPath": "/home/ubuntu/Perseus-master/Perseus.Common/Perseus.Common.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.Extensions.Http": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.Extensions.Logging": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
+            "System.Net.NetworkInformation": {
+              "target": "Package",
+              "version": "[4.3.0, )"
+            },
+            "System.Net.Sockets": {
+              "target": "Package",
+              "version": "[4.3.0, )"
+            },
+            "System.Text.Json": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.117/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/ubuntu/Perseus-master/Perseus.GUI/Perseus.GUI.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/ubuntu/Perseus-master/Perseus.GUI/Perseus.GUI.csproj",
+        "projectName": "Perseus.GUI",
+        "projectPath": "/home/ubuntu/Perseus-master/Perseus.GUI/Perseus.GUI.csproj",
+        "packagesPath": "/home/ubuntu/.nuget/packages/",
+        "outputPath": "/home/ubuntu/Perseus-master/Perseus.GUI/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/ubuntu/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/home/ubuntu/Perseus-master/Perseus.Common/Perseus.Common.csproj": {
+                "projectPath": "/home/ubuntu/Perseus-master/Perseus.Common/Perseus.Common.csproj"
+              },
+              "/home/ubuntu/Perseus-master/Perseus.Core/Perseus.Core.csproj": {
+                "projectPath": "/home/ubuntu/Perseus-master/Perseus.Core/Perseus.Core.csproj"
+              },
+              "/home/ubuntu/Perseus-master/Perseus.Reports/Perseus.Reports.csproj": {
+                "projectPath": "/home/ubuntu/Perseus-master/Perseus.Reports/Perseus.Reports.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Avalonia": {
+              "target": "Package",
+              "version": "[11.3.2, )"
+            },
+            "Avalonia.Desktop": {
+              "target": "Package",
+              "version": "[11.3.2, )"
+            },
+            "Avalonia.Diagnostics": {
+              "target": "Package",
+              "version": "[11.3.2, )"
+            },
+            "Avalonia.Fonts.Inter": {
+              "target": "Package",
+              "version": "[11.3.2, )"
+            },
+            "Avalonia.Themes.Fluent": {
+              "target": "Package",
+              "version": "[11.3.2, )"
+            },
+            "CommunityToolkit.Mvvm": {
+              "target": "Package",
+              "version": "[8.2.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.117/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/ubuntu/Perseus-master/Perseus.Reports/Perseus.Reports.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/ubuntu/Perseus-master/Perseus.Reports/Perseus.Reports.csproj",
+        "projectName": "Perseus.Reports",
+        "projectPath": "/home/ubuntu/Perseus-master/Perseus.Reports/Perseus.Reports.csproj",
+        "packagesPath": "/home/ubuntu/.nuget/packages/",
+        "outputPath": "/home/ubuntu/Perseus-master/Perseus.Reports/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/ubuntu/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/home/ubuntu/Perseus-master/Perseus.Common/Perseus.Common.csproj": {
+                "projectPath": "/home/ubuntu/Perseus-master/Perseus.Common/Perseus.Common.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Markdig": {
+              "target": "Package",
+              "version": "[0.33.0, )"
+            },
+            "System.Text.Json": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.117/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

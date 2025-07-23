@@ -1,0 +1,64 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="using:Perseus.GUI.ViewModels"
+        xmlns:views="using:Perseus.GUI.Views"
+        mc:Ignorable="d" d:DesignWidth="1200" d:DesignHeight="800"
+        x:Class="Perseus.GUI.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Title="Perseus - Cybersecurity Scanner"
+        Icon="/Assets/avalonia-logo.ico"
+        Width="1200" Height="800"
+        MinWidth="800" MinHeight="600"
+        Background="#1E1E1E">
+
+  <Design.DataContext>
+    <vm:MainWindowViewModel />
+  </Design.DataContext>
+
+  <Grid RowDefinitions="Auto,*">
+    
+    <!-- Header -->
+    <Border Grid.Row="0" Background="#2D2D30" Padding="15,10">
+      <Grid ColumnDefinitions="Auto,*,Auto">
+        
+        <!-- Logo/Title -->
+        <StackPanel Grid.Column="0" Orientation="Horizontal">
+          <TextBlock Text="⚡" FontSize="24" Foreground="#FF6B6B" Margin="0,0,10,0"/>
+          <TextBlock Text="Perseus" FontSize="20" FontWeight="Bold" Foreground="White" VerticalAlignment="Center"/>
+          <TextBlock Text="Cybersecurity Scanner" FontSize="14" Foreground="#CCCCCC" VerticalAlignment="Center" Margin="10,0,0,0"/>
+        </StackPanel>
+        
+        <!-- Tab Navigation -->
+        <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center">
+          <Button Content="🔴 Attack" Click="OnAttackTabClick"
+                  Background="#FF6B6B" Foreground="White" Padding="20,8" Margin="5,0" CornerRadius="5"/>
+          <Button Content="🛡️ Defense" Click="OnDefenseTabClick"
+                  Background="#4CAF50" Foreground="White" Padding="20,8" Margin="5,0" CornerRadius="5"/>
+        </StackPanel>
+        
+        <!-- Status -->
+        <StackPanel Grid.Column="2" Orientation="Horizontal">
+          <TextBlock Text="Status: " Foreground="#CCCCCC"/>
+          <TextBlock Text="Ready" Foreground="#4CAF50" FontWeight="Bold"/>
+        </StackPanel>
+        
+      </Grid>
+    </Border>
+    
+    <!-- Content Area -->
+    <ContentControl Grid.Row="1" Content="{Binding CurrentViewModel}">
+      <ContentControl.DataTemplates>
+        <DataTemplate DataType="vm:AttackViewModel">
+          <views:AttackView />
+        </DataTemplate>
+        <DataTemplate DataType="vm:DefenseViewModel">
+          <views:DefenseView />
+        </DataTemplate>
+      </ContentControl.DataTemplates>
+    </ContentControl>
+    
+  </Grid>
+  
+</Window>

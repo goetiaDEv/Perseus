@@ -1,0 +1,174 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="using:Perseus.GUI.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="600"
+             x:Class="Perseus.GUI.Views.DefenseView"
+             x:DataType="vm:DefenseViewModel">
+
+  <Grid RowDefinitions="Auto,*" Margin="10">
+    
+    <!-- Configuration Panel -->
+    <Border Grid.Row="0" Background="#2D2D30" CornerRadius="5" Padding="15" Margin="0,0,0,10">
+      <StackPanel>
+        
+        <!-- Header -->
+        <TextBlock Text="Defense Operations" FontSize="18" FontWeight="Bold" Foreground="#4CAF50" Margin="0,0,0,15"/>
+        
+        <!-- Operation Selection -->
+        <Grid ColumnDefinitions="Auto,*" Margin="0,0,0,10">
+          <TextBlock Grid.Column="0" Text="Operation:" VerticalAlignment="Center" Width="100" Foreground="White"/>
+          <ComboBox Grid.Column="1" SelectedItem="{Binding SelectedOperation}" Margin="5,0,0,0">
+            <ComboBoxItem Content="monitor" />
+            <ComboBoxItem Content="baseline" />
+            <ComboBoxItem Content="logs" />
+            <ComboBoxItem Content="hunt" />
+            <ComboBoxItem Content="incident" />
+          </ComboBox>
+        </Grid>
+        
+        <!-- Target Configuration -->
+        <Grid ColumnDefinitions="Auto,*" Margin="0,0,0,10">
+          <TextBlock Grid.Column="0" Text="Target:" VerticalAlignment="Center" Width="100" Foreground="White"/>
+          <TextBox Grid.Column="1" Text="{Binding Configuration.Target}" Watermark="192.168.1.0/24 or 192.168.1.1-254" Margin="5,0,0,0"/>
+        </Grid>
+        
+        <!-- File Configurations -->
+        <Grid ColumnDefinitions="Auto,*" Margin="0,0,0,10">
+          <TextBlock Grid.Column="0" Text="Baseline File:" VerticalAlignment="Center" Width="100" Foreground="White"/>
+          <TextBox Grid.Column="1" Text="{Binding Configuration.BaselineFile}" Watermark="baseline.json" Margin="5,0,0,0"/>
+        </Grid>
+        
+        <Grid ColumnDefinitions="Auto,*" Margin="0,0,0,10">
+          <TextBlock Grid.Column="0" Text="Log File:" VerticalAlignment="Center" Width="100" Foreground="White"/>
+          <TextBox Grid.Column="1" Text="{Binding Configuration.LogFile}" Watermark="/var/log/system.log" Margin="5,0,0,0"/>
+        </Grid>
+        
+        <!-- Advanced Options -->
+        <Grid ColumnDefinitions="*,*,*" Margin="0,0,0,10">
+          <StackPanel Grid.Column="0" Orientation="Horizontal">
+            <TextBlock Text="Monitor Interval:" VerticalAlignment="Center" Foreground="White" Margin="0,0,5,0"/>
+            <NumericUpDown Value="{Binding Configuration.MonitorInterval}" Minimum="30" Maximum="3600" Increment="30" Width="80"/>
+            <TextBlock Text="sec" VerticalAlignment="Center" Foreground="White" Margin="5,0,0,0"/>
+          </StackPanel>
+          
+          <StackPanel Grid.Column="1" Orientation="Horizontal" Margin="10,0,0,0">
+            <TextBlock Text="Log Type:" VerticalAlignment="Center" Foreground="White" Margin="0,0,5,0"/>
+            <ComboBox SelectedItem="{Binding Configuration.LogType}" Width="80">
+              <ComboBoxItem Content="auto" />
+              <ComboBoxItem Content="apache" />
+              <ComboBoxItem Content="nginx" />
+              <ComboBoxItem Content="system" />
+            </ComboBox>
+          </StackPanel>
+          
+          <StackPanel Grid.Column="2" Orientation="Horizontal" Margin="10,0,0,0">
+            <TextBlock Text="Baseline Duration:" VerticalAlignment="Center" Foreground="White" Margin="0,0,5,0"/>
+            <NumericUpDown Value="{Binding Configuration.BaselineDuration}" Minimum="60" Maximum="1800" Increment="60" Width="80"/>
+            <TextBlock Text="sec" VerticalAlignment="Center" Foreground="White" Margin="5,0,0,0"/>
+          </StackPanel>
+        </Grid>
+        
+        <!-- Threat Hunting Options -->
+        <Grid ColumnDefinitions="Auto,*" Margin="0,0,0,10">
+          <TextBlock Grid.Column="0" Text="Threats:" VerticalAlignment="Center" Width="100" Foreground="White"/>
+          <TextBox Grid.Column="1" Text="{Binding Configuration.Threats}" Watermark="malware backdoors lateral-movement" Margin="5,0,0,0"/>
+        </Grid>
+        
+        <!-- Incident Response Options -->
+        <Grid ColumnDefinitions="*,*" Margin="0,0,0,10">
+          <StackPanel Grid.Column="0" Orientation="Horizontal">
+            <TextBlock Text="Incident Type:" VerticalAlignment="Center" Foreground="White" Margin="0,0,5,0"/>
+            <ComboBox SelectedItem="{Binding Configuration.IncidentType}" Width="100">
+              <ComboBoxItem Content="malware" />
+              <ComboBoxItem Content="breach" />
+              <ComboBoxItem Content="ddos" />
+              <ComboBoxItem Content="insider" />
+            </ComboBox>
+          </StackPanel>
+          
+          <StackPanel Grid.Column="1" Orientation="Horizontal" Margin="10,0,0,0">
+            <TextBlock Text="Actions:" VerticalAlignment="Center" Foreground="White" Margin="0,0,5,0"/>
+            <TextBox Text="{Binding Configuration.Actions}" Watermark="isolate collect analyze" Width="150"/>
+          </StackPanel>
+        </Grid>
+        
+        <!-- Options -->
+        <Grid ColumnDefinitions="*,*" Margin="0,0,0,15">
+          <CheckBox Grid.Column="0" Content="Deep Analysis" IsChecked="{Binding Configuration.DeepAnalysis}" Foreground="White"/>
+          <StackPanel Grid.Column="1" Orientation="Horizontal">
+            <TextBlock Text="Output:" VerticalAlignment="Center" Foreground="White" Margin="0,0,5,0"/>
+            <TextBox Text="{Binding Configuration.OutputFile}" Watermark="defense_results.json" Width="150"/>
+          </StackPanel>
+        </Grid>
+        
+        <!-- Control Buttons -->
+        <Grid ColumnDefinitions="*,*,*,*,*" Margin="0,0,0,0">
+          <Button Grid.Column="0" Content="Start Operation" Command="{Binding StartOperationCommand}" 
+                  IsEnabled="{Binding !IsRunning}" Background="#4CAF50" Foreground="White" 
+                  Padding="15,8" Margin="0,0,5,0"/>
+          <Button Grid.Column="1" Content="Stop" Command="{Binding StopOperationCommand}" 
+                  IsEnabled="{Binding IsRunning}" Background="#F44336" Foreground="White" 
+                  Padding="15,8" Margin="5,0,5,0"/>
+          <Button Grid.Column="2" Content="Create Baseline" Command="{Binding CreateBaselineCommand}" 
+                  Background="#9C27B0" Foreground="White" Padding="15,8" Margin="5,0,5,0"/>
+          <Button Grid.Column="3" Content="Clear" Command="{Binding ClearOutputCommand}" 
+                  Background="#FF9800" Foreground="White" Padding="15,8" Margin="5,0,5,0"/>
+          <Button Grid.Column="4" Content="Save Results" Command="{Binding SaveResultsCommand}" 
+                  Background="#2196F3" Foreground="White" Padding="15,8" Margin="5,0,0,0"/>
+        </Grid>
+        
+        <!-- Status -->
+        <Grid ColumnDefinitions="Auto,*" Margin="0,10,0,0">
+          <TextBlock Grid.Column="0" Text="Status:" Foreground="White" Margin="0,0,10,0"/>
+          <TextBlock Grid.Column="1" Text="{Binding Status}" Foreground="#4CAF50" FontWeight="Bold"/>
+        </Grid>
+        
+      </StackPanel>
+    </Border>
+    
+    <!-- Results Panel -->
+    <Border Grid.Row="1" Background="#1E1E1E" CornerRadius="5" Padding="10">
+      <Grid ColumnDefinitions="2*,*" ColumnSpacing="10">
+        
+        <!-- Main Results -->
+        <Grid Grid.Column="0" RowDefinitions="Auto,*">
+          <TextBlock Grid.Row="0" Text="Operation Results" FontSize="16" FontWeight="Bold" 
+                     Foreground="White" Margin="0,0,0,10"/>
+          
+          <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+            <TextBox Text="{Binding Output}" IsReadOnly="True" Background="Transparent" 
+                     Foreground="#E0E0E0" FontFamily="Consolas,Monaco,monospace" FontSize="12"
+                     TextWrapping="Wrap" AcceptsReturn="True" BorderThickness="0"/>
+          </ScrollViewer>
+        </Grid>
+        
+        <!-- Alerts Panel -->
+        <Grid Grid.Column="1" RowDefinitions="Auto,*">
+          <TextBlock Grid.Row="0" Text="Security Alerts" FontSize="16" FontWeight="Bold" 
+                     Foreground="#FF6B6B" Margin="0,0,0,10"/>
+          
+          <Border Grid.Row="1" Background="#2D1B1B" CornerRadius="3" Padding="5">
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
+              <ItemsControl ItemsSource="{Binding Alerts}">
+                <ItemsControl.ItemTemplate>
+                  <DataTemplate>
+                    <Border Background="#3D2B2B" CornerRadius="3" Padding="8" Margin="0,0,0,5">
+                      <TextBlock Text="{Binding}" Foreground="#FFB3B3" FontSize="11" 
+                                 TextWrapping="Wrap" FontFamily="Consolas,Monaco,monospace"/>
+                    </Border>
+                  </DataTemplate>
+                </ItemsControl.ItemTemplate>
+              </ItemsControl>
+            </ScrollViewer>
+          </Border>
+        </Grid>
+        
+      </Grid>
+    </Border>
+    
+  </Grid>
+  
+</UserControl>
+

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "u3kCevW2ues=",
+  "dgSpecHash": "1qQQSlg6Fjhu3TXMscw3VTDba3ByVwD+CYTQEfhuP7ycY00pIGsOHvY46byzT3i6Gcu0wJ9g54w1ajxb9NWJdw==",
   "success": true,
-  "projectFilePath": "/home/ubuntu/perseus/Perseus.Reports/Perseus.Reports.csproj",
+  "projectFilePath": "/home/ubuntu/Perseus-master/Perseus.Reports/Perseus.Reports.csproj",
   "expectedPackageFiles": [
     "/home/ubuntu/.nuget/packages/markdig/0.33.0/markdig.0.33.0.nupkg.sha512",
     "/home/ubuntu/.nuget/packages/newtonsoft.json/13.0.3/newtonsoft.json.13.0.3.nupkg.sha512",

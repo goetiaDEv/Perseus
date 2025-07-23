@@ -446,10 +446,7 @@
           "System.Text.Json": "8.0.0"
         },
         "runtime": {
-          "Perseus.Common.dll": {
-            "assemblyVersion": "1.0.0",
-            "fileVersion": "1.0.0.0"
-          }
+          "Perseus.Common.dll": {}
         }
       }
     }
