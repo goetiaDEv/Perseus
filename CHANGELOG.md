@@ -145,13 +145,11 @@ e este projeto adere ao [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 #### Limitações Atuais
 - Suporte limitado a protocolos UDP
 - Geração de relatórios apenas em JSON (outros formatos planejados)
-- Interface GUI não implementada (planejada para versões futuras)
 - Integração limitada com ferramentas externas
 
 #### Melhorias Planejadas
 - Suporte a varredura UDP
 - Geração de relatórios em HTML, PDF e Markdown
-- Interface gráfica com Avalonia
 - Integração com Nmap, Masscan e outras ferramentas
 - Módulos de exploração automatizada
 

@@ -33,7 +33,7 @@ A arquitetura do Perseus segue um padrão de camadas bem definido, onde cada cam
 
 Acima da camada comum está a Perseus.Core, que contém toda a lógica de negócios da aplicação. Esta camada é subdividida em módulos especializados: Network (para operações de rede), Vulnerability (para análise de vulnerabilidades) e outros módulos que podem ser adicionados conforme necessário. A separação em módulos permite que diferentes aspectos da funcionalidade sejam desenvolvidos e mantidos independentemente.
 
-A camada Perseus.CLI fornece a interface de usuário através de comandos de linha de comando bem estruturados. Esta camada utiliza a biblioteca System.CommandLine para criar uma experiência de usuário rica e intuitiva, com suporte a subcomandos, opções e validação de parâmetros. A separação entre a lógica de negócios e a interface de usuário permite que outras interfaces (como uma GUI ou API web) sejam adicionadas no futuro sem modificar o código central.
+A camada Perseus.CLI fornece a interface de usuário através de comandos de linha de comando bem estruturados. Esta camada utiliza a biblioteca System.CommandLine para criar uma experiência de usuário rica e intuitiva, com suporte a subcomandos, opções e validação de parâmetros. A separação entre a lógica de negócios e a interface de usuário permite que outras interfaces (como uma API web) sejam adicionadas no futuro sem modificar o código central.
 
 A camada Perseus.Reports é responsável pela geração de relatórios em diversos formatos. Embora atualmente focada em JSON, esta camada está preparada para suportar formatos adicionais como Markdown, HTML e PDF. A geração de relatórios é uma funcionalidade crítica para documentar os resultados das operações de segurança ofensiva e defensiva.
 
