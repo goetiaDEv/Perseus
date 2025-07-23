@@ -18,7 +18,7 @@ Este documento descreve o roadmap planejado e as futuras atualizações e melhor
 - [ ] **Módulo de Análise de Logs**: Implementar funcionalidades para ingestão, análise e correlação de logs de segurança de diversas fontes.
 - [ ] **Detecção de Anomalias Baseada em ML**: Explorar a aplicação de algoritmos de Machine Learning para detecção avançada de anomalias e ameaças.
 - [ ] **Varredura de Vulnerabilidades Web (OWASP Top 10)**: Adicionar funcionalidades para identificar vulnerabilidades comuns em aplicações web (e.g., SQL Injection, XSS).
-- [ ] **Módulo de Exploração (PoC)**: Desenvolver um módulo para executar Provas de Conceito (PoC) de vulnerabilidades conhecidas (com aviso de responsabilidade).
+- [ ] **Módulo de Exploração (PoC)**: Desenvolver um módulo para executar Provas de Conceito (PoC) de vulnerabilidades conhecidas, focado em necessidades de segurança ofensiva (com aviso de responsabilidade).
 
 ## 🛠️ Fase 3: Otimização e Manutenção (Contínuo)
 
@@ -38,4 +38,6 @@ Este documento descreve o roadmap planejado e as futuras atualizações e melhor
 --- 
 
 *Este roadmap é um guia e pode ser ajustado com base no feedback da comunidade e nas prioridades de desenvolvimento.*
+
+
 

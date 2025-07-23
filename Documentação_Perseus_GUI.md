@@ -29,7 +29,7 @@ Perseus.GUI/
 
 ## Funcionalidades Implementadas
 
-### 1. Modo Attack (Red Team)
+### 1. Modo Attack (Segurança Ofensiva)
 
 A interface de ataque oferece uma experiência visual completa para operações ofensivas:
 
@@ -45,7 +45,7 @@ A interface de ataque oferece uma experiência visual completa para operações 
 - **Indicadores Visuais**: Status colorido baseado no nível de risco
 - **Progresso da Varredura**: Barra de progresso e mensagens de status
 
-### 2. Modo Defense (Blue Team)
+### 2. Modo Defense (Segurança Defensiva)
 
 O módulo defensivo fornece capacidades de monitoramento contínuo:
 
@@ -110,7 +110,7 @@ A interface segue princípios de design moderno:
 
 A navegação é organizada em três módulos principais:
 
-1. **🔴 Attack**: Operações ofensivas e testes de penetração
+1. **🔴 Attack**: Operações de segurança ofensiva e testes de penetração
 2. **🛡️ Defense**: Monitoramento e detecção de ameaças
 3. **⚙️ Settings**: Configurações e preferências do sistema
 

@@ -2,16 +2,16 @@
  ____                                                    
 /\  _`\                                                  
 \ \ \L\ \   __    _ __    ____     __    __  __    ____  
- \ \ ,__/ /'__`\ /\`'__\ /',__\  /'__`\ /\ \/\ \  /',__\ 
+ \ \ ,__/ /\'__`\ /\`\'__\ /\',__\  /\'__`\ /\ \/\ \  /\',__\ 
   \ \ \/ /\  __/ \ \ \/ /\__, `\/\  __/ \ \ \_\ \/\__, `\
    \ \_\ \ \____\ \ \_\ \/\____/\ \____\ \ \____/\/\____/
     \/_/  \/____/  \/_/  \/___/  \/____/  \/___/  \/___/ 
                                                          
                                                          
 ```
-# Perseus - Ferramenta de Cybersecurity para Red Team e Blue Team
+# Perseus - Ferramenta de Cybersecurity para Necessidades Ofensivas e Defensivas
 
-Perseus é uma ferramenta de cybersecurity multifuncional desenvolvida em C# que atende às necessidades tanto de equipes de Red Team quanto de Blue Team. Baseado na evolução do projeto Helius, o Perseus oferece uma abordagem unificada para operações ofensivas e defensivas de segurança cibernética.
+Perseus é uma ferramenta de cybersecurity multifuncional desenvolvida em C# que atende às necessidades de segurança ofensiva e defensiva. Baseado na evolução do projeto Helius e inspirado na filosofia do SKEF (Speed Kill Execution Framework), o Perseus oferece uma abordagem unificada para operações de segurança cibernética.
 
 ## 🎯 Visão Geral
 
@@ -19,7 +19,7 @@ O Perseus foi projetado para superar as limitações de ferramentas especializad
 
 ### Características Principais
 
-- **Dual Mode Operation**: Modos "Attack" e "Defense" claramente separados
+- **Operação em Modos Distintos**: Modos para necessidades ofensivas e defensivas claramente separados
 - **Modular Architecture**: Arquitetura extensível e modular
 - **High Performance**: Programação assíncrona e paralela para máxima eficiência
 - **CVE Integration**: Integração com bases de dados de vulnerabilidades (NVD)
@@ -50,9 +50,9 @@ dotnet run --project Perseus.CLI -- --help
 
 ## 📖 Modos de Operação
 
-### Modo Attack (Red Team)
+### Modo de Segurança Ofensiva
 
-O modo Attack é dedicado a funcionalidades ofensivas, otimizado para operações de pentest e simulações de ataque:
+O modo de segurança ofensiva é dedicado a funcionalidades ofensivas, otimizado para operações de pentest e simulações de ataque:
 
 #### Descoberta de Hosts
 ```bash
@@ -90,9 +90,9 @@ perseus attack full 192.168.1.0/24 --stealth --output results.json
 perseus attack full 10.0.0.0/24 --ports 1-65535 --min-cvss 4.0
 ```
 
-### Modo Defense (Blue Team)
+### Modo de Segurança Defensiva
 
-O modo Defense foca em capacidades defensivas para detecção, análise e resposta a incidentes:
+O modo de segurança defensiva foca em capacidades defensivas para detecção, análise e resposta a incidentes:
 
 #### Criação de Baseline
 ```bash
@@ -153,8 +153,8 @@ O Perseus inclui uma interface gráfica moderna desenvolvida em AvaloniaUI, ofer
 
 ### Características da GUI
 - **Interface Intuitiva**: Design moderno e responsivo
-- **Modo Attack**: Interface visual para operações Red Team
-- **Modo Defense**: Monitoramento em tempo real para Blue Team
+- **Modo de Segurança Ofensiva**: Interface visual para operações de segurança ofensiva
+- **Modo de Segurança Defensiva**: Monitoramento em tempo real para necessidades defensivas
 - **Configurações Avançadas**: Painel completo de personalização
 - **Exportação de Relatórios**: Resultados em formato JSON
 - **Multiplataforma**: Funciona em Windows, macOS e Linux
@@ -244,7 +244,7 @@ Perseus/
 │   ├── Network/           # Módulos de rede
 │   └── Vulnerability/     # Análise de vulnerabilidades
 ├── Perseus.CLI/           # Interface CLI
-│   └── Commands/          # Comandos de Attack e Defense
+│   └── Commands/          # Comandos para segurança ofensiva e defensiva
 ├── Perseus.Common/        # Modelos compartilhados
 ├── Perseus.Reports/       # Geração de relatórios
 └── Perseus.Tests/         # Testes
@@ -321,4 +321,6 @@ Para suporte e questões:
 **Baseado em:** Projeto Helius 
 **Versão:** 1.0.0  
 **Data:** 2025
+
+
 

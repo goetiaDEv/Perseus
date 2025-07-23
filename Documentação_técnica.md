@@ -15,7 +15,7 @@
 
 ## Introdução e Arquitetura
 
-O Perseus representa uma evolução significativa no desenvolvimento de ferramentas de cybersecurity, combinando as melhores práticas do projeto Helius e inspirado na filosofia agressiva e orientada a resultados de outros projetos. Esta documentação técnica fornece uma visão aprofundada da arquitetura, implementação e funcionalidades da ferramenta.
+O Perseus representa uma evolução significativa no desenvolvimento de ferramentas de cybersecurity, combinando as melhores práticas do projeto Helius com a filosofia agressiva e orientada a resultados do SKEF (Speed Kill Execution Framework). Esta documentação técnica fornece uma visão aprofundada da arquitetura, implementação e funcionalidades da ferramenta, atendendo às necessidades de segurança ofensiva e defensiva.
 
 ### Filosofia de Design
 
@@ -35,7 +35,7 @@ Acima da camada comum está a Perseus.Core, que contém toda a lógica de negóc
 
 A camada Perseus.CLI fornece a interface de usuário através de comandos de linha de comando bem estruturados. Esta camada utiliza a biblioteca System.CommandLine para criar uma experiência de usuário rica e intuitiva, com suporte a subcomandos, opções e validação de parâmetros. A separação entre a lógica de negócios e a interface de usuário permite que outras interfaces (como uma GUI ou API web) sejam adicionadas no futuro sem modificar o código central.
 
-A camada Perseus.Reports é responsável pela geração de relatórios em diversos formatos. Embora atualmente focada em JSON, esta camada está preparada para suportar formatos adicionais como Markdown, HTML e PDF. A geração de relatórios é uma funcionalidade crítica tanto para operações de Red Team quanto de Blue Team, fornecendo documentação detalhada dos resultados das operações.
+A camada Perseus.Reports é responsável pela geração de relatórios em diversos formatos. Embora atualmente focada em JSON, esta camada está preparada para suportar formatos adicionais como Markdown, HTML e PDF. A geração de relatórios é uma funcionalidade crítica para documentar os resultados das operações de segurança ofensiva e defensiva.
 
 ## Componentes do Sistema
 
@@ -63,7 +63,7 @@ O namespace Perseus.Core.Vulnerability contém as classes responsáveis pela an�
 
 O módulo Perseus.CLI implementa uma interface de linha de comando rica e intuitiva utilizando a biblioteca System.CommandLine. Esta biblioteca fornece funcionalidades avançadas como parsing automático de argumentos, validação de tipos, geração automática de ajuda e suporte a subcomandos aninhados.
 
-A estrutura de comandos do Perseus reflete a dualidade dos modos de operação Attack e Defense. Cada modo tem seu próprio conjunto de subcomandos, opções e parâmetros, permitindo que os usuários executem operações específicas de forma eficiente. A separação clara entre os modos ajuda a evitar confusão e reduz a possibilidade de execução acidental de comandos inadequados.
+A estrutura de comandos do Perseus reflete a dualidade dos modos de operação para segurança ofensiva e defensiva. Cada modo tem seu próprio conjunto de subcomandos, opções e parâmetros, permitindo que os usuários executem operações específicas de forma eficiente. A separação clara entre os modos ajuda a evitar confusão e reduz a possibilidade de execução acidental de comandos inadequados.
 
 O sistema de logging integrado fornece feedback detalhado sobre o progresso das operações, permitindo que os usuários monitorem o status em tempo real. Os níveis de logging são configuráveis, permitindo desde saída mínima até debugging detalhado, dependendo das necessidades do usuário.
 
@@ -127,7 +127,7 @@ A base de dados local é estruturada de forma a permitir atualizações fáceis 
 
 ### Arquitetura de Comandos
 
-A interface de linha de comando do Perseus é construída utilizando a biblioteca System.CommandLine, que fornece funcionalidades avançadas para parsing de argumentos, validação de tipos e geração automática de documentação. A arquitetura de comandos reflete a estrutura dual do Perseus, com comandos principais para os modos Attack e Defense, além de utilitários auxiliares.
+A interface de linha de comando do Perseus é construída utilizando a biblioteca System.CommandLine, que fornece funcionalidades avançadas para parsing de argumentos, validação de tipos e geração automática de documentação. A arquitetura de comandos reflete a estrutura dual do Perseus, com comandos principais para as necessidades de segurança ofensiva e defensiva, além de utilitários auxiliares.
 
 O comando raiz 'perseus' serve como ponto de entrada para todas as operações. Este comando fornece opções globais como verbosidade de logging e especificação de arquivos de saída, que são aplicáveis a todos os subcomandos. A estrutura hierárquica permite que funcionalidades relacionadas sejam agrupadas logicamente, facilitando a descoberta e uso.
 
@@ -135,7 +135,7 @@ O sistema de validação de parâmetros é robusto, verificando não apenas tipo
 
 A geração automática de ajuda é abrangente, incluindo descrições detalhadas de comandos, exemplos de uso e explicações de opções. O sistema de ajuda é contextual, fornecendo informações específicas para cada nível da hierarquia de comandos.
 
-### Comandos de Attack
+### Comandos para Segurança Ofensiva
 
 Os comandos de Attack implementam todas as funcionalidades ofensivas do Perseus, desde descoberta básica de hosts até avaliações completas de vulnerabilidades. Cada comando é projetado para ser autossuficiente, mas também para trabalhar em conjunto com outros comandos em workflows mais complexos.
 
@@ -147,7 +147,7 @@ O comando 'vuln' implementa análise de vulnerabilidades, combinando varredura d
 
 O comando 'full' implementa uma avaliação completa, combinando descoberta de hosts, varredura de portas e análise de vulnerabilidades em uma única operação. Este comando inclui opções avançadas como modo stealth para operações discretas e configuração detalhada de parâmetros para cada fase da avaliação.
 
-### Comandos de Defense
+### Comandos para Segurança Defensiva
 
 Os comandos de Defense implementam funcionalidades defensivas focadas em monitoramento, detecção e resposta a incidentes. Estes comandos são projetados para operação contínua e integração com sistemas de monitoramento existentes.
 
@@ -241,7 +241,7 @@ O Perseus implementa um framework robusto para integração com ferramentas exte
 
 A execução de ferramentas externas é implementada de forma segura, utilizando Process.Start com configurações apropriadas para evitar injection attacks e outras vulnerabilidades. O sistema implementa timeout e controle de recursos para evitar que ferramentas externas consumam recursos excessivos.
 
-O parsing de saídas de ferramentas externas utiliza parsers específicos para cada ferramenta, implementados como plugins carregáveis. Esta abordagem permite adição de suporte para novas ferramentas sem modificação do código core.
+A parsing de saídas de ferramentas externas utiliza parsers específicos para cada ferramenta, implementados como plugins carregáveis. Esta abordagem permite adição de suporte para novas ferramentas sem modificação do código core.
 
 O sistema de integração implementa fallback inteligente, utilizando funcionalidades nativas do Perseus quando ferramentas externas não estão disponíveis ou falham. Esta abordagem garante que o Perseus continue funcional mesmo em ambientes com limitações de software.
 
@@ -261,7 +261,7 @@ A API de geração de relatórios permite que outras aplicações utilizem o sis
 
 Esta seção documenta problemas comuns encontrados durante o uso do Perseus e suas soluções. A maioria dos problemas está relacionada a configurações de rede, permissões de sistema ou limitações de recursos.
 
-**Problema: "The system's ping utility could not be found"**
+**Problema: "The system\'s ping utility could not be found"**
 Este erro ocorre quando o utilitário ping não está instalado no sistema. No Ubuntu/Debian, instale com: `sudo apt-get install iputils-ping`. No CentOS/RHEL, instale com: `sudo yum install iputils`.
 
 **Problema: Timeouts frequentes durante varredura de portas**
@@ -298,5 +298,7 @@ Para análise de vulnerabilidades, considere pre-popular o cache de CVE executan
 **Autor:** goetiaDEv  
 **Versão:** 1.0.0  
 **Data:** 2025  
-**Baseado em:** Projeto Helius
+**Baseado em:** Projeto Helius 
+
+
 
