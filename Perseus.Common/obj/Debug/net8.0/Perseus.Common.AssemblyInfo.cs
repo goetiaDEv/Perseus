@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Perseus.Common")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1eeec516025a3cdf30cfbda43936ac193d8dc10f")]
 [assembly: System.Reflection.AssemblyProductAttribute("Perseus.Common")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Perseus.Common")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

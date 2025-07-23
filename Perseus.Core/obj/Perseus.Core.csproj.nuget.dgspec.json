@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/ubuntu/perseus/Perseus.Core/Perseus.Core.csproj": {}
+    "/home/ubuntu/Perseus-master/Perseus.Core/Perseus.Core.csproj": {}
   },
   "projects": {
-    "/home/ubuntu/perseus/Perseus.Common/Perseus.Common.csproj": {
+    "/home/ubuntu/Perseus-master/Perseus.Common/Perseus.Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/ubuntu/perseus/Perseus.Common/Perseus.Common.csproj",
+        "projectUniqueName": "/home/ubuntu/Perseus-master/Perseus.Common/Perseus.Common.csproj",
         "projectName": "Perseus.Common",
-        "projectPath": "/home/ubuntu/perseus/Perseus.Common/Perseus.Common.csproj",
+        "projectPath": "/home/ubuntu/Perseus-master/Perseus.Common/Perseus.Common.csproj",
         "packagesPath": "/home/ubuntu/.nuget/packages/",
-        "outputPath": "/home/ubuntu/perseus/Perseus.Common/obj/",
+        "outputPath": "/home/ubuntu/Perseus-master/Perseus.Common/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/ubuntu/.nuget/NuGet/NuGet.Config"
@@ -32,11 +32,6 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -68,18 +63,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.412/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.117/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "/home/ubuntu/perseus/Perseus.Core/Perseus.Core.csproj": {
+    "/home/ubuntu/Perseus-master/Perseus.Core/Perseus.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/ubuntu/perseus/Perseus.Core/Perseus.Core.csproj",
+        "projectUniqueName": "/home/ubuntu/Perseus-master/Perseus.Core/Perseus.Core.csproj",
         "projectName": "Perseus.Core",
-        "projectPath": "/home/ubuntu/perseus/Perseus.Core/Perseus.Core.csproj",
+        "projectPath": "/home/ubuntu/Perseus-master/Perseus.Core/Perseus.Core.csproj",
         "packagesPath": "/home/ubuntu/.nuget/packages/",
-        "outputPath": "/home/ubuntu/perseus/Perseus.Core/obj/",
+        "outputPath": "/home/ubuntu/Perseus-master/Perseus.Core/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/ubuntu/.nuget/NuGet/NuGet.Config"
@@ -94,8 +89,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/home/ubuntu/perseus/Perseus.Common/Perseus.Common.csproj": {
-                "projectPath": "/home/ubuntu/perseus/Perseus.Common/Perseus.Common.csproj"
+              "/home/ubuntu/Perseus-master/Perseus.Common/Perseus.Common.csproj": {
+                "projectPath": "/home/ubuntu/Perseus-master/Perseus.Common/Perseus.Common.csproj"
               }
             }
           }
@@ -104,11 +99,6 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -156,7 +146,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.412/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.117/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

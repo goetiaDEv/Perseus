@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "tWKjbsDsqeo=",
+  "dgSpecHash": "/E6S3pbLgdljPUwTOW5netMMWVY//WXxE8c0kMWZWHZFE6Ytvr/CPWU+A8t/7a+cf0kSampQAWYN2vZkv6m3bA==",
   "success": true,
-  "projectFilePath": "/home/ubuntu/perseus/Perseus.Core/Perseus.Core.csproj",
+  "projectFilePath": "/home/ubuntu/Perseus-master/Perseus.Core/Perseus.Core.csproj",
   "expectedPackageFiles": [
     "/home/ubuntu/.nuget/packages/microsoft.extensions.configuration/8.0.0/microsoft.extensions.configuration.8.0.0.nupkg.sha512",
     "/home/ubuntu/.nuget/packages/microsoft.extensions.configuration.abstractions/8.0.0/microsoft.extensions.configuration.abstractions.8.0.0.nupkg.sha512",
