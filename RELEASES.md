@@ -1,4 +1,4 @@
-# Changelog - Perseus Security Scanner
+# Releases - Perseus Security Scanner
 
 Todas as mudanças notáveis neste projeto serão documentadas neste arquivo.
 
