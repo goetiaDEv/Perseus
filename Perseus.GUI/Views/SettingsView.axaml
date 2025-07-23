@@ -1,0 +1,217 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:Perseus.GUI.ViewModels"
+             x:Class="Perseus.GUI.Views.SettingsView"
+             x:DataType="vm:SettingsViewModel">
+
+  <Design.DataContext>
+    <vm:SettingsViewModel />
+  </Design.DataContext>
+
+  <ScrollViewer>
+    <StackPanel Margin="24" Spacing="24">
+      
+      <!-- Header -->
+      <StackPanel Spacing="8">
+        <TextBlock Text="⚙️ Configurações" 
+                   FontSize="24" 
+                   FontWeight="Bold" 
+                   Foreground="#805AD5"/>
+        <TextBlock Text="Configure as preferências e parâmetros do Perseus" 
+                   FontSize="14" 
+                   Foreground="#718096"/>
+      </StackPanel>
+
+      <!-- Network Settings -->
+      <Border Background="#F7FAFC" 
+              CornerRadius="8" 
+              Padding="20">
+        <StackPanel Spacing="16">
+          <TextBlock Text="Configurações de Rede" 
+                     FontSize="16" 
+                     FontWeight="SemiBold" 
+                     Foreground="#2D3748"/>
+          
+          <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto" Spacing="16">
+            
+            <!-- Default Timeout -->
+            <StackPanel Grid.Column="0" Grid.Row="0" Spacing="4">
+              <TextBlock Text="Timeout Padrão (ms)" FontWeight="SemiBold"/>
+              <NumericUpDown Value="{Binding DefaultTimeout}" 
+                             Minimum="100" 
+                             Maximum="30000" 
+                             Increment="100"/>
+              <TextBlock Text="Timeout para operações de rede" 
+                         FontSize="11" 
+                         Foreground="#718096"/>
+            </StackPanel>
+
+            <!-- Default Threads -->
+            <StackPanel Grid.Column="1" Grid.Row="0" Spacing="4">
+              <TextBlock Text="Threads Padrão" FontWeight="SemiBold"/>
+              <NumericUpDown Value="{Binding DefaultThreads}" 
+                             Minimum="1" 
+                             Maximum="500" 
+                             Increment="10"/>
+              <TextBlock Text="Número de threads para operações paralelas" 
+                         FontSize="11" 
+                         Foreground="#718096"/>
+            </StackPanel>
+
+            <!-- Stealth Mode -->
+            <StackPanel Grid.Column="0" Grid.Row="1" Spacing="8">
+              <CheckBox Content="Modo Stealth" 
+                        IsChecked="{Binding EnableStealth}"/>
+              <TextBlock Text="Reduz velocidade para operações discretas" 
+                         FontSize="11" 
+                         Foreground="#718096"/>
+            </StackPanel>
+          </Grid>
+        </StackPanel>
+      </Border>
+
+      <!-- Logging Settings -->
+      <Border Background="#F7FAFC" 
+              CornerRadius="8" 
+              Padding="20">
+        <StackPanel Spacing="16">
+          <TextBlock Text="Configurações de Logging" 
+                     FontSize="16" 
+                     FontWeight="SemiBold" 
+                     Foreground="#2D3748"/>
+          
+          <Grid ColumnDefinitions="*,*" Spacing="16">
+            
+            <!-- Enable Logging -->
+            <StackPanel Grid.Column="0" Spacing="8">
+              <CheckBox Content="Habilitar Logging" 
+                        IsChecked="{Binding EnableLogging}"/>
+              <TextBlock Text="Ativa o sistema de logs da aplicação" 
+                         FontSize="11" 
+                         Foreground="#718096"/>
+            </StackPanel>
+
+            <!-- Log Level -->
+            <StackPanel Grid.Column="1" Spacing="4">
+              <TextBlock Text="Nível de Log" FontWeight="SemiBold"/>
+              <ComboBox ItemsSource="{Binding LogLevels}"
+                        SelectedItem="{Binding LogLevel}"
+                        IsEnabled="{Binding EnableLogging}"/>
+              <TextBlock Text="Controla a verbosidade dos logs" 
+                         FontSize="11" 
+                         Foreground="#718096"/>
+            </StackPanel>
+          </Grid>
+        </StackPanel>
+      </Border>
+
+      <!-- CVE Settings -->
+      <Border Background="#F7FAFC" 
+              CornerRadius="8" 
+              Padding="20">
+        <StackPanel Spacing="16">
+          <TextBlock Text="Configurações de CVE" 
+                     FontSize="16" 
+                     FontWeight="SemiBold" 
+                     Foreground="#2D3748"/>
+          
+          <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto" Spacing="16">
+            
+            <!-- Enable CVE Cache -->
+            <StackPanel Grid.Column="0" Grid.Row="0" Spacing="8">
+              <CheckBox Content="Habilitar Cache de CVE" 
+                        IsChecked="{Binding EnableCveCache}"/>
+              <TextBlock Text="Melhora performance das consultas" 
+                         FontSize="11" 
+                         Foreground="#718096"/>
+            </StackPanel>
+
+            <!-- Cache TTL -->
+            <StackPanel Grid.Column="1" Grid.Row="0" Spacing="4">
+              <TextBlock Text="TTL do Cache (segundos)" FontWeight="SemiBold"/>
+              <NumericUpDown Value="{Binding CveCacheTtl}" 
+                             Minimum="300" 
+                             Maximum="86400" 
+                             Increment="300"
+                             IsEnabled="{Binding EnableCveCache}"/>
+              <TextBlock Text="Tempo de vida dos dados em cache" 
+                         FontSize="11" 
+                         Foreground="#718096"/>
+            </StackPanel>
+
+            <!-- NVD API Key -->
+            <StackPanel Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" Spacing="4">
+              <TextBlock Text="Chave da API NVD (Opcional)" FontWeight="SemiBold"/>
+              <TextBox Text="{Binding NvidApiKey}" 
+                       Watermark="Insira sua chave da API do NVD para rate limits maiores"
+                       PasswordChar="*"/>
+              <TextBlock Text="Melhora os limites de rate da API NVD" 
+                         FontSize="11" 
+                         Foreground="#718096"/>
+            </StackPanel>
+          </Grid>
+        </StackPanel>
+      </Border>
+
+      <!-- Actions -->
+      <Border Background="White" 
+              CornerRadius="8" 
+              Padding="20"
+              BorderBrush="#E2E8F0"
+              BorderThickness="1">
+        <StackPanel Spacing="16">
+          <TextBlock Text="Ações" 
+                     FontSize="16" 
+                     FontWeight="SemiBold" 
+                     Foreground="#2D3748"/>
+          
+          <StackPanel Orientation="Horizontal" Spacing="12">
+            <Button Content="💾 Salvar Configurações" 
+                    Command="{Binding SaveSettingsCommand}"
+                    Background="#38A169" 
+                    Foreground="White" 
+                    Padding="16,8"/>
+            <Button Content="🔄 Restaurar Padrões" 
+                    Command="{Binding ResetSettingsCommand}"
+                    Background="#ED8936" 
+                    Foreground="White" 
+                    Padding="16,8"/>
+            <Button Content="🔗 Testar Conectividade" 
+                    Command="{Binding TestConnectivityCommand}"
+                    Background="#3182CE" 
+                    Foreground="White" 
+                    Padding="16,8"/>
+          </StackPanel>
+        </StackPanel>
+      </Border>
+
+      <!-- System Information -->
+      <Border Background="#EDF2F7" 
+              CornerRadius="8" 
+              Padding="20">
+        <StackPanel Spacing="12">
+          <TextBlock Text="Informações do Sistema" 
+                     FontSize="16" 
+                     FontWeight="SemiBold" 
+                     Foreground="#2D3748"/>
+          
+          <Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto,Auto,Auto" Spacing="8">
+            <TextBlock Grid.Column="0" Grid.Row="0" Text="Versão:" FontWeight="SemiBold"/>
+            <TextBlock Grid.Column="1" Grid.Row="0" Text="Perseus v1.0.0"/>
+            
+            <TextBlock Grid.Column="0" Grid.Row="1" Text="Framework:" FontWeight="SemiBold"/>
+            <TextBlock Grid.Column="1" Grid.Row="1" Text=".NET 8.0"/>
+            
+            <TextBlock Grid.Column="0" Grid.Row="2" Text="Plataforma:" FontWeight="SemiBold"/>
+            <TextBlock Grid.Column="1" Grid.Row="2" Text="AvaloniaUI 11.0"/>
+            
+            <TextBlock Grid.Column="0" Grid.Row="3" Text="Desenvolvido por:" FontWeight="SemiBold"/>
+            <TextBlock Grid.Column="1" Grid.Row="3" Text="Manus AI"/>
+          </Grid>
+        </StackPanel>
+      </Border>
+
+    </StackPanel>
+  </ScrollViewer>
+</UserControl>
+

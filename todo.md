@@ -2,8 +2,6 @@
 
 Este documento descreve o roadmap planejado e as futuras atualizações e melhorias para o Perseus, abrangendo a versão CLI. O objetivo é guiar o desenvolvimento contínuo, focando em expandir funcionalidades, aprimorar a experiência do usuário e garantir a robustez da ferramenta.
 
-
-
 ## ✨ Fase 2: Novas Funcionalidades e Integrações (Médio Prazo)
 
 - [ ] **Dashboard Executivo**: Criar um dashboard consolidado na GUI para apresentar métricas de segurança, resumos de varreduras e alertas em tempo real.

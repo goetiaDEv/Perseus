@@ -1,0 +1,7 @@
+/home/ubuntu/perseus/Perseus.GUI/obj/Debug/net8.0/Perseus.GUI.csproj.AssemblyReference.cache
+/home/ubuntu/perseus/Perseus.GUI/obj/Debug/net8.0/Avalonia/Resources.Inputs.cache
+/home/ubuntu/perseus/Perseus.GUI/obj/Debug/net8.0/Avalonia/resources
+/home/ubuntu/perseus/Perseus.GUI/obj/Debug/net8.0/Perseus.GUI.GeneratedMSBuildEditorConfig.editorconfig
+/home/ubuntu/perseus/Perseus.GUI/obj/Debug/net8.0/Perseus.GUI.AssemblyInfoInputs.cache
+/home/ubuntu/perseus/Perseus.GUI/obj/Debug/net8.0/Perseus.GUI.AssemblyInfo.cs
+/home/ubuntu/perseus/Perseus.GUI/obj/Debug/net8.0/Perseus.GUI.csproj.CoreCompileInputs.cache

@@ -1,0 +1,181 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:Perseus.GUI.ViewModels"
+             x:Class="Perseus.GUI.Views.AttackView"
+             x:DataType="vm:AttackViewModel">
+
+  <Design.DataContext>
+    <vm:AttackViewModel />
+  </Design.DataContext>
+
+  <ScrollViewer>
+    <StackPanel Margin="24" Spacing="24">
+      
+      <!-- Header -->
+      <StackPanel Spacing="8">
+        <TextBlock Text="🔴 Modo Attack (Red Team)" 
+                   FontSize="24" 
+                   FontWeight="Bold" 
+                   Foreground="#E53E3E"/>
+        <TextBlock Text="Operações ofensivas para testes de penetração e avaliação de segurança" 
+                   FontSize="14" 
+                   Foreground="#718096"/>
+      </StackPanel>
+
+      <!-- Configuration Panel -->
+      <Border Background="#F7FAFC" 
+              CornerRadius="8" 
+              Padding="20">
+        <StackPanel Spacing="16">
+          <TextBlock Text="Configuração da Varredura" 
+                     FontSize="16" 
+                     FontWeight="SemiBold" 
+                     Foreground="#2D3748"/>
+          
+          <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto,Auto,Auto" Spacing="16">
+            
+            <!-- Target -->
+            <StackPanel Grid.Column="0" Grid.Row="0" Spacing="4">
+              <TextBlock Text="Alvo" FontWeight="SemiBold"/>
+              <TextBox Text="{Binding Target}" 
+                       Watermark="192.168.1.0/24 ou 192.168.1.1-254"
+                       IsEnabled="{Binding !IsScanning}"/>
+              <TextBlock Text="Suporta CIDR, ranges e IPs individuais" 
+                         FontSize="11" 
+                         Foreground="#718096"/>
+            </StackPanel>
+
+            <!-- Ports -->
+            <StackPanel Grid.Column="1" Grid.Row="0" Spacing="4">
+              <TextBlock Text="Portas" FontWeight="SemiBold"/>
+              <TextBox Text="{Binding Ports}" 
+                       Watermark="1-1000 ou 22,80,443"
+                       IsEnabled="{Binding !IsScanning}"/>
+              <TextBlock Text="Ranges, listas ou portas individuais" 
+                         FontSize="11" 
+                         Foreground="#718096"/>
+            </StackPanel>
+
+            <!-- Timeout -->
+            <StackPanel Grid.Column="0" Grid.Row="1" Spacing="4">
+              <TextBlock Text="Timeout (ms)" FontWeight="SemiBold"/>
+              <NumericUpDown Value="{Binding Timeout}" 
+                             Minimum="100" 
+                             Maximum="10000" 
+                             Increment="100"
+                             IsEnabled="{Binding !IsScanning}"/>
+            </StackPanel>
+
+            <!-- Threads -->
+            <StackPanel Grid.Column="1" Grid.Row="1" Spacing="4">
+              <TextBlock Text="Threads" FontWeight="SemiBold"/>
+              <NumericUpDown Value="{Binding Threads}" 
+                             Minimum="1" 
+                             Maximum="200" 
+                             Increment="10"
+                             IsEnabled="{Binding !IsScanning}"/>
+            </StackPanel>
+
+            <!-- Options -->
+            <StackPanel Grid.Column="0" Grid.Row="2" Spacing="8">
+              <CheckBox Content="Capturar Banners" 
+                        IsChecked="{Binding EnableBannerGrab}"
+                        IsEnabled="{Binding !IsScanning}"/>
+              <CheckBox Content="Análise de Vulnerabilidades" 
+                        IsChecked="{Binding EnableVulnScan}"
+                        IsEnabled="{Binding !IsScanning}"/>
+            </StackPanel>
+
+            <!-- CVSS Score -->
+            <StackPanel Grid.Column="1" Grid.Row="2" Spacing="4">
+              <TextBlock Text="CVSS Mínimo" FontWeight="SemiBold"/>
+              <NumericUpDown Value="{Binding MinCvssScore}" 
+                             Minimum="0" 
+                             Maximum="10" 
+                             Increment="0.1" 
+                             FormatString="F1"
+                             IsEnabled="{Binding !IsScanning}"/>
+            </StackPanel>
+          </Grid>
+
+          <!-- Control Buttons -->
+          <StackPanel Orientation="Horizontal" Spacing="12">
+            <Button Content="🚀 Iniciar Varredura" 
+                    Command="{Binding StartScanCommand}"
+                    Background="#38A169" 
+                    Foreground="White" 
+                    Padding="16,8"
+                    IsEnabled="{Binding !IsScanning}"/>
+            <Button Content="⏹️ Parar" 
+                    Command="{Binding StopScanCommand}"
+                    Background="#E53E3E" 
+                    Foreground="White" 
+                    Padding="16,8"
+                    IsEnabled="{Binding IsScanning}"/>
+            <Button Content="🗑️ Limpar" 
+                    Command="{Binding ClearResultsCommand}"
+                    Background="#718096" 
+                    Foreground="White" 
+                    Padding="16,8"
+                    IsEnabled="{Binding !IsScanning}"/>
+            <Button Content="💾 Exportar" 
+                    Command="{Binding ExportResultsCommand}"
+                    Background="#3182CE" 
+                    Foreground="White" 
+                    Padding="16,8"
+                    IsEnabled="{Binding !IsScanning}"/>
+          </StackPanel>
+
+          <!-- Progress -->
+          <StackPanel Spacing="8" IsVisible="{Binding IsScanning}">
+            <TextBlock Text="{Binding ScanProgress}" 
+                       FontWeight="SemiBold" 
+                       Foreground="#2D3748"/>
+            <ProgressBar IsIndeterminate="True" Height="6"/>
+          </StackPanel>
+        </StackPanel>
+      </Border>
+
+      <!-- Results Panel -->
+      <Border Background="White" 
+              CornerRadius="8" 
+              Padding="20"
+              BorderBrush="#E2E8F0"
+              BorderThickness="1">
+        <StackPanel Spacing="16">
+          <Grid ColumnDefinitions="*,Auto">
+            <TextBlock Grid.Column="0"
+                       Text="Resultados da Varredura" 
+                       FontSize="16" 
+                       FontWeight="SemiBold" 
+                       Foreground="#2D3748"/>
+            <TextBlock Grid.Column="1"
+                       Text="{Binding ScanResults.Count, StringFormat='{0} hosts encontrados'}" 
+                       FontSize="12" 
+                       Foreground="#718096"
+                       VerticalAlignment="Center"/>
+          </Grid>
+
+          <DataGrid ItemsSource="{Binding ScanResults}"
+                    AutoGenerateColumns="False"
+                    GridLinesVisibility="Horizontal"
+                    HeadersVisibility="Column"
+                    IsReadOnly="True"
+                    Height="300">
+            <DataGrid.Columns>
+              <DataGridTextColumn Header="Host" Binding="{Binding Host}" Width="120"/>
+              <DataGridTextColumn Header="Hostname" Binding="{Binding Hostname}" Width="150"/>
+              <DataGridTextColumn Header="Portas Abertas" Binding="{Binding OpenPorts}" Width="120"/>
+              <DataGridTextColumn Header="Serviços" Binding="{Binding Services}" Width="200"/>
+              <DataGridTextColumn Header="Vulnerabilidades" Binding="{Binding Vulnerabilities}" Width="100"/>
+              <DataGridTextColumn Header="CVSS Máximo" Binding="{Binding HighestCvss}" Width="100"/>
+              <DataGridTextColumn Header="Status" Binding="{Binding Status}" Width="100"/>
+            </DataGrid.Columns>
+          </DataGrid>
+        </StackPanel>
+      </Border>
+
+    </StackPanel>
+  </ScrollViewer>
+</UserControl>
+
