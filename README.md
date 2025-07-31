@@ -9,7 +9,7 @@
 ```
 # Perseus - Ferramenta de Cybersecurity para Necessidades Ofensivas e Defensivas
 
-Perseus é uma ferramenta de cybersecurity multifuncional desenvolvida em C# que atende às necessidades de segurança ofensiva e defensiva. Baseado na evolução do projeto Helius e inspirado na filosofia do SKEF (Speed Kill Execution Framework), o Perseus oferece uma abordagem unificada para operações de segurança cibernética.
+Perseus é uma ferramenta de cybersecurity multifuncional desenvolvida em C# que atende às necessidades de segurança ofensiva e defensiva. Baseado na evolução do projeto Helius, o Perseus oferece uma abordagem unificada para operações de segurança cibernética.
 
 ## 🎯 Visão Geral
 
