@@ -4,9 +4,11 @@
  | |_) |  _| | |_) \___ \|  _| | | | \___ \ 
  |  __/| |___|  _ < ___) | |___| |_| |___) |
  |_|   |_____|_| \_\____/|_____|\___/|____/ 
-                                            
-                                                         
 ```
+[![.NET](https://img.shields.io/badge/.NET-8.0-blueviolet)](https://dotnet.microsoft.com/)
+[![License](https://img.shields.io/badge/license-MIT-green)](./LICENSE)
+[![Status](https://img.shields.io/badge/status-em%20desenvolvimento-orange)]()
+
 # Perseus - Ferramenta de Cybersecurity para Necessidades Ofensivas e Defensivas
 
 Perseus é uma ferramenta de cybersecurity multifuncional desenvolvida em C# que atende às necessidades de segurança ofensiva e defensiva. Baseado na evolução do projeto Helius, o Perseus oferece uma abordagem unificada para operações de segurança cibernética.
