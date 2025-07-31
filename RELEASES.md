@@ -130,7 +130,6 @@ e este projeto adere ao [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 #### Filosofia de Design
 - Baseado na evolução do projeto Helius
-- Inspirado na filosofia SKEF (Speed Kill Execution Framework)
 - Foco em eficiência, modularidade e extensibilidade
 - Abordagem dual para Red Team e Blue Team
 
@@ -155,7 +154,7 @@ e este projeto adere ao [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ### Agradecimentos
 
-Este projeto foi desenvolvido com base no trabalho anterior do projeto Helius e inspirado pela filosofia do SKEF. Agradecimentos especiais à comunidade de cybersecurity por fornecer as bases teóricas e práticas que tornaram este projeto possível.
+Este projeto foi desenvolvido com base no trabalho anterior do projeto Helius. Agradecimentos especiais à comunidade de cybersecurity por fornecer as bases teóricas e práticas que tornaram este projeto possível.
 
 ---
 
